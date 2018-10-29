@@ -34,7 +34,10 @@ public class ProductSubarray {
 				if(tmp<maxProduct) {
 					list.add(Arrays.copyOfRange(input, start, i+1));
 					if(i==limit-1 && tmp!=input[i])
-						list.add(Arrays.copyOfRange(input, i, i+1));
+					{	
+						if(input[i]<maxProduct)
+							list.add(Arrays.copyOfRange(input, i, i+1));
+					}
 					i++;
 					
 				}
